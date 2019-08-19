@@ -41,7 +41,7 @@ Cụm từ "side effects" mang ý nghĩa là thực hiện những logic mà kh�
 
 "Side effects" bao gồm những việc sau (không phải là tất cả): tạo output, sử dụng `require`  `include`, hoặc kết nối đến external services, thay đổi file ini setting, emit errors hay exceptions, chỉnh sửa biến global hay static, đọc và viết file ...
 
-Dưới đây là một ví dụ về việc một file chứa cả declarations (định nghĩa) và side effects;
+Dưới đây là một ví dụ về việc một file chứa cả declarations (định nghĩa) và side effects (KHÔNG NÊN):
 
 ```php
 <?php
@@ -61,7 +61,7 @@ function foo()
 }
 ```
 
-Dưới đây là ví dụ về một file chỉ bao gồm declarations mà không có side effects
+Dưới đây là ví dụ về một file chỉ bao gồm declarations mà không có side effects (NÊN):
 
 ```php
 <?php
