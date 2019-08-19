@@ -2,44 +2,36 @@
 
 Bộ quy tắc này dựa trên và mở rộng từ [PSR-1](psr-1-convention), basic coding standard
 
-Bộ quy tắc này được tạo ra nhằm giảm bới những khó khăn trong việc đọc code
-của người khác. Nó thực hiện điều đó bằng cách đặt ra những quy định hay gợi
+Bộ quy tắc này được tạo ra nhằm giảm bới những khó khăn trong việc đọc code của người khác bằng cách đặt ra những quy định hay gợi
 ý về việc format PHP code.
 
 [Tài liệu gốc](http://www.php-fig.org/psr/psr-2/)
 
 # 1. Khái quát chung
 
-- Code phải tuân theo "basic style guide" [PSR-1](psr-1-convention)
+- Code PHẢI tuân theo "basic style guide" [PSR-1](psr-1-convention)
 
-- Code sử dựng soft-tab, nghĩa là sử dụng 4 dấu cách làm indent
+- Code PHẢI dùng 4 spaces (soft-tab) để indent, KHÔNG ĐƯỢC dùng tab (hard-tab)
 
-- Không có hard limit về độ dài của một dòng; soft limit phải là 120
-  chữ. Một dòng nên có không quá 80 chữ
+- KHÔNG ĐƯỢC có giới hạn cứng (hard-limit) về độ dài của một dòng; giới hạn mềm (soft-limit) PHẢI là 120 kí tự. Một dòng NÊN có 80 kí tự hoặc ít hơn.
 
-- Cần phải có một dòng trống ở sau phần khai báo `namespace`. Ngoài ra cũng cần có
-  một dòng trống phía sau phần khai báo `use` hoặc`import` hoặc `include`
+- Sau phần khai báo `namespace` PHẢI có một dòng trống (blank line). Sau phần khai báo `use` cũng PHẢI có một dòng trống.
 
-- Dấu mở ngặc nhọn dùng khi khai báo class phải được viết ở dòng mới (không viết cùng dòng với phần khai báo tên class),
-  và dấu đóng ngoặc nhọn của một class phải được viết ở dòng mới sau khi kết thúc body của class
+- Khi khai báo class, dấu mở ngoặc nhọn sau tên class PHẢI được viết ở dòng mới (new line). Dấu đóng ngoặc nhọn cũng PHẢI viết ở dòng mới sau khi kết thúc class.
 
-- Dấu mở ngặc nhọn dùng khi khai báo method phải được viết ở dòng mới (không viết cùng dòng với phần khai báo tên method),
-   và dấu đóng ngoặc nhọn của một method phải được viết ở dòng mới sau khi kết thúc body của method
+- Khi khai báo method, dấu mở ngoặc nhọn sau tên method PHẢI được viết ở dòng mới. Dấu đóng ngoặc nhọn cũng PHẢI viết ở dòng mới sau khi kết thúc method.
 
-- Phải luôn khai báo tính visibility (`public`, `protected` hay là `private`) của properties cũng như methods.
- `abstract` và `final` phải được khai báo phía trước tính visibility và `static` phải được khai báo sau tính visibility
+- Khi khai báo properties và methods, PHẢI khai báo từ khóa phạm vi sử dụng (visibility) (`public`, `protected` hoặc `private`). Từ khóa `abstract` và `final` PHẢI được khai báo trước từ khóa visibility. Từ khóa `static` PHẢI khai báo sau từ khóa visibility
 
-- Cần phải có một dấu cách phía sau những từ khoá Control structure (như `if`, `else`, `for` ...).
-  Không được có dấu cách phía sau tên của method khi gọi hàm
+- Khi dùng các cấu trúc điều khiển (control structures), sau từ khóa (ví dụ như `if`, `else`, `for` ...) PHẢI có một dấu cách. Ngược lại, KHÔNG ĐƯỢC có dấu cách sau tên method khi gọi.
 
-- Dấu mở ngoặc nhọn cho control structures (như `if`, `else`, `for` ...) phải được viết cùng dòng, trong khi đó đấu đóng ngoặc
-  phải được viết ở dòng mới
+- Khi dùng các cấu trúc điều khiển, dấu mở ngoặc nhọn PHẢI được viết cùng dòng với từ khóa. Ngược lại dấu đóng ngoặc nhọn PHẢI viết ở dòng mới.
 
-- Trong câu lệnh control structures, không được phép có dấu cách ở sau dấu mở ngặc tròn cũng như ở trước dấu đóng ngoặc tròn
+- Khi dùng các cấu trúc điều khiển, dấu mở ngoặc đơn sau từ khóa KHÔNG ĐƯỢC có dấu cách theo sau. Dấu đóng ngoặc đơn KHÔNG ĐƯỢC có dấu cách ở trước.
 
 ## 1.1. Ví dụ
 
-Ví dụ dưới đây bao gồm một vài quy tắc đã được đề cập ở phần trên, overview:
+Đoạn code ví dụ dưới đây đã bao gồm các quy tắc được đề cập ở phần trên:
 
 ```php
 <?php
@@ -74,56 +66,84 @@ class Foo extends Bar implements FooInterface
 
 ## 2.1 Basic Coding Standard
 
-Code phải tuân theo "coding style guide" [PSR-1](psr-1-convention).
+Code PHẢI tuân theo PSR-1.
 
 ## 2.2 Files
 
-Mọi PHP files phải dùng Unix LF (linefeed) line ending.
+Mọi PHP files PHẢI dùng Unix LF (linefeed) line ending.
 
-Mọi PHP files phải kết thúc bằng một dòng trống.
+Mọi PHP files PHẢI kết thúc bằng một dòng trống.
 
-Trong một file chỉ bao gồm code PHP thì không được viết tag đóng `?>`.
+Trong một file chỉ bao gồm code PHP thì KHÔNG ĐƯỢC viết tag đóng `?>`.
 
 ## 2.3. Lines
 
-Không có hard limit về độ dài của một dòng.
+KHÔNG ĐƯỢC có hard limit về độ dài của một dòng. Chương trình check style tự động không dược báo error.
 
-Soft limit của độ dài một dòng phải là 120 chữ. Chương trình check style tự động phải báo warning nhưng không được báo
+Soft limit của độ dài một dòng PHẢI là 120 kí tự. Chương trình check style tự động phải báo warning nhưng không được báo
 error khi vượt quá soft limit.
 
-Một dòng nên có không quá 80 chữ. Dòng mà dài quá 80 chữ thì nên chia nhỏ ra thành nhiều dòng với độ dài mỗi dòng
-không quá 80 chữ.
+Một dòng KHÔNG NÊN có quá 80 kí tự. Dòng mà dài quá 80 kí tự thì NÊN chia nhỏ ra thành nhiều dòng với độ dài mỗi dòng
+không quá 80 kí tự.
 
-Một dòng không trống không được phép có trailing whitespace (dấu cách ở cuối dòng)
+Một dòng không trống KHÔNG ĐƯỢC có trailing whitespace (dấu cách ở cuối dòng).
 
 Dòng trống có thể được thêm vào để code có thể được dễ đọc hơn và để phân cách những đoạn code.
 
-Không được phép có quá một statement trên một dòng.
+KHÔNG ĐƯỢC có quá một statement trên một dòng.
+
+Ví dụ:
+
+```php
+if ($a == $b) { if ($a == $c) { // Hai "if" ở cùng một dòng
+// ...
+}}
+```
 
 ## 2.4. Canh lề - Indenting
 
-Code không dùng tab, mà phải sử dụng 4 dấu cách làm indent.
+Code KHÔNG ĐƯỢC dùng tab, mà PHẢI sử dụng 4 dấu cách làm indent.
 
 ## 2.5. Keywords và True/False/Null
 
-Những [keywords] của PHP phải được viết thường. (không viết hoa)
+Những [keywords] của PHP PHẢI được viết thường. (không viết hoa)
 
-Những constants của PHP là `true`, `false`, và `null` cũng cần phải viết thường.
+Ví dụ: 
+
+```php
+IF ($a == $b) { từ khóa "IF" không được viết hoa
+// ...
+}
+```
+
+Những constants của PHP là `true`, `false`, và `null` cũng PHẢI viết thường.
 
 [keywords](http://php.net/manual/en/reserved.keywords.php)
 
 
 # 3. Khai báo Namespace và Use
 
-Cần phải có một dòng trắng phía sau khai báo `namespace`.
+Cần PHẢI có một dòng trắng phía sau khai báo `namespace`.
 
-Những phần khai báo `use` phải được đặt phía sau phần khai báo `namespace`.
+Những phần khai báo `use` PHẢI được đặt phía sau phần khai báo `namespace`.
 
-Phải dùng một từ `use` cho mỗi khao báo.
+PHẢI dùng một từ `use` cho mỗi khai báo.
 
-Phải có một dòng trắng phía sau đoạn code `use`.
+PHẢI có một dòng trắng phía sau đoạn code `use`.
 
 Ví dụ:
+
+KHÔNG ĐƯỢC:
+
+```php
+<?php
+namespace Vendor\Package; // Sau namespace không có một dòng trống
+use FooClass; use BarClass as Bar; // Sử dụng 2 khai báo use ở cùng một dòng
+use OtherVendor\OtherPackage\BazClass; // Sau khai báo use không có một dòng trống
+// ... additional PHP code ...
+```
+
+PHẢI:
 
 ```php
 <?php
@@ -137,16 +157,15 @@ use OtherVendor\OtherPackage\BazClass;
 
 ```
 
-
 # 4. Classes, Properties, và Methods
 
-Từ class dưới đây được hiểu là cả những class bình thường, hay cả interfaces và traits.
+Từ class dưới đây được hiểu là cả những class bình thường, interfaces và traits.
 
 ## 4.1. Extends và Implements
 
-Từ khoá `extends` và `implements` phải được viết cùng dòng với tên class.
+Từ khoá `extends` và `implements` PHẢI được viết cùng dòng với tên class.
 
-Dấu mở ngoặc nhọn của class phải đứng trên một dòng riêng. Dấu đóng ngoặc phải được viết ở dòng sau của phần body.
+Dấu mở ngoặc nhọn của class PHẢI đứng trên một dòng riêng. Dấu đóng ngoặc phải được viết ở dòng sau của phần body.
 
 ```php
 <?php
